@@ -13,11 +13,11 @@ const connectDatabase = () => {
       console.log(
         `Mongodb connected with the server data ${data.connection.host}`
       );
-    })
-    //we dont need the catch here as because we are handling the catch or unhandled promise rejection in server.js file
-    // .catch((err) => {
-    //   console.log("Error", err);
-    // });
+    });
+  //we dont need the catch here as because we are handling the catch or unhandled promise rejection in server.js file
+  // .catch((err) => {
+  //   console.log("Error", err);
+  // });
 };
 
-module.exports = connectDatabase
+module.exports = connectDatabase;

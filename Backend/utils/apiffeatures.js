@@ -40,15 +40,14 @@ class ApiFeatures {
     return this;
   }
 
-  pagination(resultPerPage){
-
-    const currentPage = Number (this.queryStr.page) || 1;
+  pagination(resultPerPage) {
+    const currentPage = Number(this.queryStr.page) || 1;
     //LOGIC
     //Suppose their is 50 products
     // we need to show 10 on each page
     // so we will show 10 in first page and then skip first 10 product for the 2nd page and first 20 products for the 3rd page
 
-    const skip = resultPerPage * (currentPage - 1)
+    const skip = resultPerPage * (currentPage - 1);
     //LOGIC resultPerPage = 10
     //1st page  = 10 * (1 - 1) == 0 . So 0 products skip
     //2nd page = 10 * (2 - 1) == 10 . So 10 products skipped
