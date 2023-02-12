@@ -3,22 +3,15 @@ import { CgMouse } from "react-icons/all";
 import "./Home.css";
 import ProductCard from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
-// import { clearErrors, getProduct } from "../../actions/productAction";
+import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 // import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 
-const product = {
-    name : "Blue Tshirt",
-    images : [{ url: "https://i.ibb.co/DRST11n/1.webp"}],
-    price: "Rs 3000",
-    _id: "Tariq"
-}
-
 const Home = () => {
 //   const alert = useAlert();
-//   const dispatch = useDispatch();
-//   const { loading, error, products } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  const { loading, error, products,productsCount } = useSelector((state) => state.products);
 
 //   useEffect(() => {
 //     if (error) {
@@ -27,6 +20,10 @@ const Home = () => {
 //     }
 //     dispatch(getProduct());
 //   }, [dispatch, error, alert]);
+
+useEffect(()=>{
+  dispatch(getProduct());
+},[dispatch])
 
   return (
     <Fragment>
@@ -50,20 +47,11 @@ const Home = () => {
           <h2 className="homeHeading">Featured Products</h2>
 
           <div className="container" id="container">
-            {/* {products &&
+            {products &&
               products.map((product) => (
                 <ProductCard key={product._id} product={product} />
-              ))} */}
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
-              <ProductCard product={product} />
+              ))}
+              
           </div>
         {/* </Fragment> */}
       {/* )} */}
