@@ -29,7 +29,13 @@
     "mongoose": "^5.13.5",
     "nodemailer": "^6.8.0",
     "nodemon": "^2.0.20",
+    "react-icons": "^3.11.0",
+    "react-rating-stars-component": "^2.2.0",
     "stripe": "^11.5.0",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "overlay-navbar": "^1.2.3"
   }
 }
